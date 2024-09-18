@@ -12,14 +12,20 @@ server_address = (host, port)
 print("Connecting to server...")
 stream_socket.connect(server_address)
 
-# Send data
-message = 'Hello, Server!'
-stream_socket.sendall(message.encode())
+try:
+    while True:
+        # Send data
+        message = input("Enter message to send (or 'q' to quit): ")
+        if message.lower() == 'q':
+            break
+        stream_socket.sendall(message.encode())
 
-# Receive response from the server
-data = stream_socket.recv(16)
-print('Received from server:', data.decode())
-
-# Close the socket
-stream_socket.close()
-print('Socket closed')
+        # Receive response from the server
+        data = stream_socket.recv(16)
+        print('Received from server:', data.decode())
+except Exception as e:
+    print(f"An error occurred: {e}")
+finally:
+    # Close the socket
+    stream_socket.close()
+    print('Socket closed')
