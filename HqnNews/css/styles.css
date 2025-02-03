@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    font-family: "Tinos", serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: small;
+    
+}
+
+main {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    gap: 20px;
+    grid-template-areas:
+      "Nav Nav Nav"
+      "MainArticle1 MainArticle2 SideArticle"
+      "MainArticle3 MainArticle4 SideArticle";
+    margin: 0 auto;
+    padding-top: 45px;
+    padding-bottom: 40px;
+    max-width: 1400px;
+}
+
+nav {
+    grid-area: Nav;
+    width: 100%;
+    height: fit-content;
+    font-size: larger;
+    display: flex;
+	flex-direction: row;
+    justify-content: left;
+	align-items: center;
+    border-bottom: 1px solid black;
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        display: flex;
+        margin-bottom: 0;
+    }
+
+    li {
+        padding: 10px;
+    }
+
+}
+  
+article {
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+#main-article1 {
+    grid-area: MainArticle1;
+}
+
+#main-article2 {
+    grid-area: MainArticle2;
+}
+
+#main-article3 {
+    grid-area: MainArticle3;
+}
+
+#main-article4 {
+    grid-area: MainArticle4;
+}
+  
+#side-article {
+    grid-area: SideArticle;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+footer {
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    background-color: black;
+}
+  
