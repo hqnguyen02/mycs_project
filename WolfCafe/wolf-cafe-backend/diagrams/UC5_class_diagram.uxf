@@ -1,0 +1,30 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLPackage</id><coordinates><x>270</x><y>520</y><w>390</w><h>120</h></coordinates><panel_attributes>edu.ncsu.csc326.wolfcafe.controller
+--
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>270</x><y>250</y><w>390</w><h>190</h></coordinates><panel_attributes>edu.ncsu.csc326.wolfcafe.service.impl
+--
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>270</x><y>0</y><w>470</w><h>180</h></coordinates><panel_attributes>edu.ncsu.csc326.wolfcafe.repository
+--
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>550</y><w>370</w><h>80</h></coordinates><panel_attributes>AuthController
+--
+--
++ login(loginDto: LoginDto): ResponseEntity&lt;JwtAuthResponse&gt;
++ register(registerDto: RegisterDto): ResponseEntity&lt;String&gt;
++ deleteUser(id: Long): ResponseEntity&lt;String&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>280</y><w>370</w><h>150</h></coordinates><panel_attributes>AuthServiceImpl
+--
+- roleRepository: RoleRepository
+- passwordEncoder: PasswordEncoder
+- authenticationManager: AuthenticationManager
+- jwtTokenProvider: JwtTokenProvider
+--
++ login(loginDto: LoginDto): JwtAuthResponse
++ register(registerDto: RegisterDto): String
++ deleteUserById(id: Long): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>430</y><w>100</w><h>130</h></coordinates><panel_attributes>lt=&lt;-
+- authService</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>30</y><w>450</w><h>130</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+UserRepository
+--
+--
++ findByUsername(username: String): Optional&lt;User&gt;
++ existsByEmail(email: String): Boolean
++ findByUsernameOrEmail(username: String, email: String): Optional&lt;User&gt;
++ existsByUsername(username: String): Boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>170</y><w>120</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
+- userRepository</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element></diagram>

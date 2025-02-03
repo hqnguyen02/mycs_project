@@ -18,15 +18,15 @@ username = input("Enter your name: ")
 running = True
 
 # Timeout value for the recv call
-RECV_TIMEOUT = 1  # seconds
+RECV_TIMEOUT = 1
 
 def receive():
     global running
-    client.settimeout(RECV_TIMEOUT)  # Set timeout for recv
+    client.settimeout(RECV_TIMEOUT)
     while running:
         try:
             message = client.recv(1024).decode('ascii')
-            if not message:  # Connection closed
+            if not message:
                 print("Disconnected from the server.")
                 break
             if message == 'USERNAME':
@@ -34,12 +34,12 @@ def receive():
             else:
                 print(message)
         except socket.timeout:
-            continue  # Timeout occurred, just continue the loop
+            continue
         except Exception as e:
             if running:
                 print(f"Client is disconnecting. {e}")
             break
-    running = False  # Stop the client after receiving errors or disconnection
+    running = False
 
 def write():
     global running
@@ -49,15 +49,15 @@ def write():
             if message.lower() == "exit":
                 print("Exiting...")
                 client.send(f"{username} has left the chat.".encode('ascii'))
-                running = False  # Stop the receive thread as well
-                break  # Exit the loop
+                running = False
+                break
             else:
                 client.send(f"{username}: {message}".encode('ascii'))
         except Exception as e:
             if running:
                 print(f"Client is disconnecting. {e}")
             running = False
-            break  # Exit the loop
+            break
 
 # Start the threads
 receive_thread = threading.Thread(target=receive, daemon=True)
@@ -73,9 +73,9 @@ try:
     write_thread.join()
 except KeyboardInterrupt:
     print("Closing connection...")
-    running = False  # Stop threads
+    running = False
     try:
-        client.close()  # Ensure client socket is closed cleanly
+        client.close()
     except Exception as e:
         print(f"Error closing client socket: {e}")
     sys.exit()

@@ -24,7 +24,7 @@ def broadcast(message):
         for client in clients:
             try:
                 # Check if client is still connected before sending the message
-                if client.fileno() != -1:  # Check if the client socket is still valid
+                if client.fileno() != -1:
                     client.send(message)
             except (socket.error, ConnectionResetError) as e:
                 print(f"Failed to send message to client: {e}")
@@ -37,7 +37,7 @@ def handle(client):
     try:
         while True:
             message = client.recv(1024)
-            if not message:  # Handle disconnection (client closed connection)
+            if not message:
                 break
             broadcast(message)
     except (socket.error, ConnectionResetError) as e:
@@ -85,7 +85,7 @@ def shutdown_server(signal, frame):
     print("\nShutting down the server...")
     running = False
     # Close all client connections
-    with lock:  # Ensure thread-safe removal of clients
+    with lock:
         for client in clients:
             client.close()
     server.close()
