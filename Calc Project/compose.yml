@@ -1,0 +1,16 @@
+name: csc342
+
+services:
+  proxy:
+    image: nginx:latest
+    restart: unless-stopped
+    volumes:
+      - ./proxy/default.conf.template:/etc/nginx/templates/default.conf.template
+    ports:
+      - "80:80"
+      
+  mp2:
+    image: httpd:latest
+    restart: unless-stopped
+    volumes:
+      - ./MiniProject2:/usr/local/apache2/htdocs
