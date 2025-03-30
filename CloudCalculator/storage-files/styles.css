@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(203, 239, 213);
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.calc {
+    display: grid;
+    grid-template-areas: 
+        "title title"
+        "display history-panel"
+        "buttons history-panel"
+        "buttons history-clear";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 50px auto 50px;
+    gap: 20px;
+    background-color: white;
+    padding: 25px;
+    width: 600px;
+    height: 450px;
+    border-radius: 25px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+.title {
+    grid-area: title;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(67, 209, 49);
+}
+
+#display {
+    grid-area: display;
+    height: 50px;
+    text-align: right;
+    font-size: larger;
+    padding-right: 10px;
+    border: 1.5px solid black;
+}
+
+.buttons {
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+button {
+    background-color: rgb(203, 239, 213);
+    font-size: larger;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.equals {
+    grid-column: span 4;
+}
+
+#history-panel {
+    height: 260px;
+    grid-area: history-panel;
+    text-align: left;
+    font-size: larger;
+    margin-top: 302px;
+    border: 1.5px solid black;
+    overflow-y: auto;
+    list-style-type: none; 
+    padding: 15px;
+    scrollbar-width: thin;
+}
+
+#history-panel li {
+    padding: 8px 10px;
+    border-bottom: 1px solid #181818;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+#history-clear {
+    grid-area: history-clear;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#visitor-container {
+    grid-area: title;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+    background-color: rgb(67, 209, 49);
+    padding: 0px;
+    border-radius: 10px;
+    width: 26%;
+}
+
+#visitor-container p {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+#visitor-count {
+    font-size: 22px;
+    color: #ffcc00;
+    font-weight: bold;
+}
