@@ -1,0 +1,7 @@
+{
+    "url_to_repo": "https://github.com/manideepika21/neuraloperator.git",
+    "clone_repo_to": "/app/Testing",
+    "branch": "main",
+    "from_date": "2023-06-02",
+    "to_date": "2023-08-16"
+}

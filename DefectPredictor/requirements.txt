@@ -1,0 +1,9 @@
+PyGithub==1.55
+scikit-learn==1.2.2
+numpy==1.24.2
+nltk~=3.5
+pandas~=1.1.4
+pydriller~=2.5
+pyyaml~=6.0.1
+spacy~=2.3.4
+repository-miner>=0.1.0
