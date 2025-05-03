@@ -1,0 +1,56 @@
+.graph.background {
+    background-color: white;
+    padding: 1em;
+
+    min-width: 350px;
+}
+.graph.area {
+
+    width: 100%;
+    min-width: 350px;
+}
+
+.fieldInput {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.inputlabel {
+    margin-left: 1em;
+}
+
+.activityInputBox {
+    margin-left: auto;
+}
+
+.datepickerContainer {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1em;
+
+    padding: 1em;
+}
+
+.inputRow {
+    display: flex;
+    gap: 3em;
+
+    align-items: center;
+}
+
+.btnSubmitGraph {
+    * {
+        width: 100%;
+    }
+}
+
+.gridcontainer {
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 1em;
+}

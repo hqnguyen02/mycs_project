@@ -1,0 +1,64 @@
+.MuiMenuItem-root a {
+    width: 100%;
+}
+
+.sideNav {
+    display: none;
+}
+
+.profileIcon {
+    margin-left: auto;
+}
+
+.noNavToggle { 
+    display: none;
+}
+
+.hamburgerIcon {
+    display: none;
+}
+  
+@media screen and (max-width: 600px) {
+    .headerNav {
+      display: none;
+    }
+  
+    .sideNav {
+      display: flex;
+    }
+
+    .hamburgerIcon {
+        display: block;
+    }
+
+    .noNavToggle {
+        display: block;
+    }
+
+    .navToggle {
+        display: none;
+    }
+  }
+
+.navbuttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.AppbarContent {
+    display: flex;
+    flex-direction: row-reverse;
+
+    align-items: center;
+
+    p {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+
+.MuiAvatar-root {
+    align-self: center;
+
+    margin: 1em;
+}

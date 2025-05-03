@@ -1,0 +1,46 @@
+.activityCard {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1em;
+
+    padding: 1em;
+}
+
+.activityHeader {
+    display: flex;
+    align-items: center;
+
+    gap: 1em;
+}
+
+.arrow-dropdown {
+    margin-left: auto;
+}
+
+.activityCardInput {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1em;
+}
+
+.activePlanContainer {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1em;
+
+    justify-content: stretch;
+}
+
+.activeSection {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2em;
+}
+
+.activeSectionHeader {
+    padding: 0.5em 1em 0.5em 1em;
+}

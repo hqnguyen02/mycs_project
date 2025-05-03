@@ -1,0 +1,105 @@
+.sign-in-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+.sign-in-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    background-color: white;
+    padding: 4rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sign-in-form h2 {
+    margin: 0 0 0 0;
+    font-size: 28px;
+    color: black;
+    font-weight: 550;
+}
+.sign-in-form label {
+    color: black;
+    text-align: left;
+    font-size: large;
+    font-weight: 520;
+}
+  
+.sign-in-button {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+  
+.sign-up-button-a {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.sign-button {
+    padding: 1rem;
+    font-size: large;
+}
+.button-divider {
+    position: relative;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 14px;
+    color: gray;
+}
+
+.button-divider::before,
+.button-divider::after {
+    content: "";
+    position: absolute;
+    margin: 10px 0;
+    width: 45%;
+    height: 1px;
+    background-color: gray;
+}
+
+.button-divider::before {
+    left: 0;
+}
+
+.button-divider::after {
+    right: 0;
+}
+
+.sign-in-button:hover {
+    background-color: #0056b3;
+}
+
+.sign-up-button-a:hover {
+    background-color: #0056b3;
+}
+
+@media (min-width: 600px) {
+    .sign-in-form {
+      width: 528px;
+    }
+}
+
+@media (max-width: 599px) {
+    .sign-in-form {
+        padding: 2rem;
+        width: calc(100% - 6rem);
+        margin: 1rem;
+        box-sizing: border-box;
+    }
+}
